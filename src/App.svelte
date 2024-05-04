@@ -10,7 +10,7 @@
 <Router {url}>
 	<Header />
 	<div class="route">
-		<Route path="/"><Home /></Route>
+		<Route path="/dunes-protocol"><Home /></Route>
 	</div>
 	<Footer />
 </Router>
