@@ -2,6 +2,12 @@
 	import arrowIcon from '../assets/images/icons/arrow-green-featured.svg'
 	import arrowGrayIcon from '../assets/images/icons/arrow-gray.svg'
 	import FinishedItems from './FinishedItems.svelte'
+
+	let isFinished = true
+
+	function toggleUpcoming() {
+		
+	}
 </script>
 
 <section>
@@ -89,7 +95,7 @@
 				text-transform: uppercase;
 				height: 60px;
 				@include flex-center;
-				min-width: 195px;
+				min-width: 194px;
 				font-size: 15px;
 				font-family: 'B612 Mono', $font-stack;
 			}

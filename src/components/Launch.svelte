@@ -45,7 +45,8 @@
 
 			<p class="description">Launch on Dunes Platform</p>
 			<button class="btn">Apply for IDO</button>
-			<div class="left-bottom-line"></div>
+			<div class="left-top2-line"></div>
+
 
 			<div class="bottom"></div>
 		</div>
@@ -119,7 +120,7 @@
 		img {
 			position: relative;
 			top: -75px;
-			left: -24px;
+			left: -17px;
 			transform: rotate(180deg);
 		}
 	}
@@ -157,14 +158,14 @@
 		width: 1px;
 		height: 800px;
 		background-color: rgba($color: #ffffff, $alpha: 0.25);
-		left: 570px;
+		left: 577px;
 	}
 	.left-top2-line {
 		position: absolute;
 		width: 3000px;
 		height: 1px;
 		background-color: rgba($color: #ffffff, $alpha: 0.25);
-		left: -2430px;
+		left: -2423px;
 	}
 
 	.left-bottom-line {

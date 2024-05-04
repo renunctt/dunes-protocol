@@ -77,6 +77,7 @@
 		</div>
 	</div>
 </section>
+<div class="triple"></div>
 
 <style lang="scss">
 	@import '../assets/styles/variables';
@@ -213,7 +214,6 @@
 	}
 
 	.card-right {
-
 		.card-video {
 			min-width: 814px;
 			position: relative;

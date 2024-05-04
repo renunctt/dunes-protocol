@@ -41,9 +41,11 @@
 	@import '../assets/styles/variables';
 
 	.card {
+		position: relative;
 		width: 384px;
 		border: $border-line;
 		border-color: #ffffff;
+		z-index: 10;
 	}
 
 	.top {
@@ -131,6 +133,7 @@
 		font-size: 15px;
 		font-family: 'B612 Mono', $font-stack;
 		text-transform: uppercase;
+		cursor: pointer;
 	}
 
 	@media (max-width: 450px) {

@@ -155,7 +155,7 @@
 	.nav {
 		height: 100%;
 		@include flex-center;
-		margin-left: 69px;
+		margin-left: 68px;
 		border-left: $border-line;
 		border-right: $border-line;
 
