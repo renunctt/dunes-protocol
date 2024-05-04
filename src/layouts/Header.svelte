@@ -6,6 +6,19 @@
 	import galleryIcon from '../assets/images/nav/gallery.svg'
 	import launchpadIcon from '../assets/images/nav/launchpad.png'
 	import stakingIcon from '../assets/images/nav/staking.svg'
+	import { Link } from 'svelte-routing'
+
+	const incubationItems = [
+		{ text: 'Dune Swap', link: '/swap', icon: swapIcon },
+		{ text: 'Dune Bridge', link: '/bridge', icon: bridgeIcon },
+		{ text: 'Dunes Gallery', link: '/gallery', icon: galleryIcon },
+	]
+
+	const protocolItems = [
+		{ text: 'IDO Launchpad', link: '/ido-launchpad', icon: launchpadIcon },
+		{ text: 'INO Launchpad', link: '/ino-launchpad', icon: launchpadIcon },
+		{ text: 'Staking', link: '/staking', icon: stakingIcon },
+	]
 </script>
 
 <header class="header">
@@ -15,36 +28,30 @@
 		<nav class="nav">
 			<button class="item incubation-link">
 				<div class="incubation">
-					<a href="#" class="link">
-						<img src={swapIcon} alt="" />
-						Dune Swap
-					</a>
-					<a href="#" class="link">
-						<img src={bridgeIcon} alt="" />
-						Dune Bridge
-					</a>
-					<a href="#" class="link">
-						<img src={galleryIcon} alt="" />
-						Dunes Gallery
-					</a>
+					{#each incubationItems as item}
+						<div class="link">
+							<Link to={item.link}>
+								<img src={item.icon} alt="" />
+								{item.text}
+							</Link>
+						</div>
+					{/each}
 				</div>
 				<span>Incubation</span>
 				<img src={arrowBottomIcon} alt="icon" />
 			</button>
 			<button class="item protocol-link">
 				<div class="protocol">
-					<a href="#" class="link">
-						<img src={launchpadIcon} alt="" />
-						IDO Launchpad
-					</a>
-					<a href="#" class="link">
-						<img src={launchpadIcon} alt="" />
-						INO Launchpad
-					</a>
-					<a href="#" class="link">
-						<img src={stakingIcon} alt="" />
-						Staking
-					</a>
+					{#each protocolItems as item}
+						<div class="link">
+							<Link to={item.link}>
+								<div class="link-item">
+									<img src={item.icon} alt="" />
+									<span>{item.text}</span>
+								</div>
+							</Link>
+						</div>
+					{/each}
 				</div>
 				<span>Protocol</span>
 				<img src={arrowBottomIcon} alt="icon" />
@@ -91,6 +98,7 @@
 		transform: translateX(-1px);
 
 		.link {
+
 			padding: 30px 0 30px 26px;
 			@include flex;
 			justify-content: start;
@@ -99,6 +107,13 @@
 			backdrop-filter: blur(10px);
 			border: $border-line;
 		}
+	}
+
+	.link-item {
+
+		padding: 30px 0 30px 26px;
+		@include flex-center;
+		gap: 9px;
 	}
 
 	.protocol {
@@ -113,7 +128,6 @@
 		transform: translateX(-1px);
 
 		.link {
-			padding: 30px 0 30px 26px;
 			@include flex;
 			justify-content: start;
 			gap: 17px;
