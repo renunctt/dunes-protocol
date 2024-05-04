@@ -1,0 +1,29 @@
+// variables
+$primary-color: #ffffff;
+$second-color: #ACACAC;
+$hover-color: #81d100;
+
+$primary-bg-color: #0b0b0e;
+$second-bg-color: #0C0C0F;
+
+$font-stack: system-ui, Helvetica, Arial, sans-serif;
+
+$border-line: 1px solid rgba(255, 255, 255, 0.25);
+
+@mixin flex {
+	display: flex;
+	align-items: center;
+}
+
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin second-font {
+	font-family: 'B612 Mono', $font-stack;
+	font-size: 20px;
+	font-weight: 400;
+	text-transform: uppercase;
+}

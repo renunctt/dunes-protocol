@@ -1,0 +1,88 @@
+@import './assets/styles/variables';
+
+@font-face {
+	font-family: 'New Science';
+	font-weight: 500;
+	font-style: normal;
+	src: local('New Science'),
+		url('./assets/fonts/New-Science-Medium.woff2') format('woff2'),
+		url('./assets/fonts/New-Science-Medium.woff') format('woff'),
+		url('./assets/fonts/New-Science-Medium.eot') format('eot');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'New Science';
+	font-weight: 400;
+	font-style: normal;
+	src: local('New Science'),
+		url('./assets/fonts/New-Science-Regular.woff2') format('woff2'),
+		url('./assets/fonts/New-Science-Regular.woff') format('woff'),
+		url('./assets/fonts/New-Science-Regular.eot') format('eot');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'B612 Mono';
+	font-weight: 400;
+	font-style: normal;
+	src: local('B612 Mono'),
+		url('./assets/fonts/B612Mono-Regular.woff2') format('woff2'),
+		url('./assets/fonts/B612Mono-Regular.woff') format('woff'),
+		url('./assets/fonts/B612Mono-Regular.otf') format('eot');
+	font-display: swap;
+}
+
+:root {
+	font-family: 'New Science', $font-stack;
+	font-weight: 400;
+
+	color: $primary-color;
+	background-color: $primary-bg-color;
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: $primary-color;
+	text-decoration: inherit;
+	transition: color 0.3s;
+	cursor: pointer;
+}
+
+a:hover {
+	color: $hover-color;
+}
+
+body {
+	place-items: center;
+	min-width: 320px;
+	min-height: 100vh;
+}
+
+#app {
+	min-height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+button {
+	color: $primary-color;
+	background-color: inherit;
+	border: none;
+	cursor: pointer;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
