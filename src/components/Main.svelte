@@ -123,30 +123,53 @@
 	}
 
 	@media (max-width: 450px) {
+		.main {
+			height: 630px;
+		}
 		.content {
 			width: 100%;
+			margin-top: 32px;
 		}
 		.title {
 			width: 100%;
-			text-align: center;
+			text-align: start;
 			font-size: 32px;
 		}
 
 		.paragraph {
-			text-align: center;
+			text-align: start;
 			font-size: 18px;
 		}
 
 		.hero-bg {
-			left: -200px;
+			
+			top: 300px;
+			left: -40px;
+		}
+
+		.hero-bg img {
+			max-width: 460px;
 		}
 
 		.coin {
-			display: none;
+			top: 315px;
+			left: -278px;
+		}
+
+		.coin img {
+			width: 250px;
 		}
 
 		.btn-box {
-			flex-direction: column;
+			margin-top: 42px;
+
+			button {
+				width: 162px;
+				height: 41px;
+				background-size: cover;
+
+				font-size: 17px;
+			}
 		}
 	}
 </style>

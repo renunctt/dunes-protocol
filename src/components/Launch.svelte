@@ -47,7 +47,6 @@
 			<button class="btn">Apply for IDO</button>
 			<div class="left-top2-line"></div>
 
-
 			<div class="bottom"></div>
 		</div>
 
@@ -204,16 +203,74 @@
 	}
 
 	@media (max-width: 450px) {
+		section {
+			.container {
+				position: relative;
+			}
+		}
+		.top {
+			width: 118px;
+		}
 		.left {
 			width: 100%;
 		}
 		.title {
-			font-size: 30px;
+			position: relative;
 			width: 100%;
+			font-size: 30px;
+			font-weight: 500;
+
+			img {
+				position: absolute;
+				top: 0;
+				left: 348px;
+			}
 		}
 
 		.right {
 			display: none;
+		}
+
+		.left-top2-line {
+			left: -2638px;
+		}
+		.left-top-line {
+			left: 362px;
+		}
+		.description {
+			font-size: 16px;
+			width: 100%;
+			padding-top: 24px;
+		}
+
+		.btn {
+			width: 140px;
+			height: 36px;
+			background-size: cover;
+			font-size: 12px;
+			margin-top: 26px;
+			margin-bottom: 36px;
+		}
+
+		.bottom {
+			height: 190px;
+			width: 118px;
+		}
+
+		.decor {
+			top: 310px;
+			left: 100px;
+			z-index: 10;
+
+			img {
+				width: 385px;
+			}
+		}
+
+		.hero img {
+			left: -405px;
+			max-height: 890px;
+			top: 18px;
 		}
 	}
 </style>

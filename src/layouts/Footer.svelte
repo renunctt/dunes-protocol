@@ -27,28 +27,31 @@
 
 <footer class="footer">
 	<div class="container">
-		<Logo />
-
-		<div class="item">
-			{#each items1 as item}
-				<a href="#{item.l}">{item.t}</a>
-			{/each}
+		<div class="logo">
+			<Logo />
 		</div>
 
-		<div class="item">
-			{#each items2 as item}
-				<Link to={item.l}>{item.t}</Link>
-			{/each}
-		</div>
+		<div class="items">
+			<div class="item">
+				{#each items1 as item}
+					<a href="#{item.l}">{item.t}</a>
+				{/each}
+			</div>
 
+			<div class="item">
+				{#each items2 as item}
+					<Link to={item.l}>{item.t}</Link>
+				{/each}
+			</div>
 
-		<div class="social-items">
-			<p>Follow us</p>
-			{#each socialItems as item}
-				<a href="https://{item.link}">
-					<img src={item.icon} alt={item.alt} />
-				</a>
-			{/each}
+			<div class="social-items">
+				<p>Follow us</p>
+				{#each socialItems as item}
+					<a href="https://{item.link}">
+						<img src={item.icon} alt={item.alt} />
+					</a>
+				{/each}
+			</div>
 		</div>
 
 		<div class="big-logo">
@@ -57,9 +60,7 @@
 	</div>
 
 	<div class="bottom">
-		<div class="container">
-			Dunes (c) 2024. All rights reserved.
-		</div>
+		<div class="container">Dunes (c) 2024. All rights reserved.</div>
 	</div>
 </footer>
 
@@ -115,6 +116,10 @@
 			color: $second-color;
 		}
 	}
+	.items {
+		display: flex;
+		gap: 95px;
+	}
 
 	@media (max-width: 450px) {
 		.footer {
@@ -126,7 +131,31 @@
 		}
 
 		.item {
-			flex-direction: row;
+			font-size: 14px;
+		}
+		.items {
+			display: flex;
+			gap: 45px;
+		}
+
+		.big-logo {
+			top: -20px;
+			left: -10px;
+			margin-left: auto;
+
+			img {
+				width: 92px;
+			}
+		}
+
+		.bottom {
+			position: relative;
+			top: -24px;
+			padding-bottom: 0;
+
+			.container {
+				font-size: 8px;
+			}
 		}
 	}
 </style>

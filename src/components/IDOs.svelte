@@ -2,11 +2,16 @@
 	import arrowIcon from '../assets/images/icons/arrow-green-featured.svg'
 	import arrowGrayIcon from '../assets/images/icons/arrow-gray.svg'
 	import FinishedItems from './FinishedItems.svelte'
+	import UpcomingItems from './UpcomingItems.svelte'
 
 	let isFinished = true
 
 	function toggleUpcoming() {
-		
+		isFinished = false
+	}
+
+	function toggleFinished() {
+		isFinished = true
 	}
 </script>
 
@@ -21,8 +26,17 @@
 				</h2>
 
 				<div class="btn-box">
-					<button class="btn btn-left">Live & UPCOMING</button>
-					<button class="btn">FINISHED</button>
+					<button
+						style="color: {isFinished ? 'rgba(255, 255, 255, 0.6)' : '#fff'};"
+						on:click={toggleUpcoming}
+						class="btn btn-left">Live & UPCOMING</button
+					>
+					<button
+						style="color: {!isFinished ? 'rgba(255, 255, 255, 0.6)' : '#fff'};"
+						class:selected={isFinished}
+						on:click={toggleFinished}
+						class="btn">FINISHED</button
+					>
 				</div>
 			</div>
 
@@ -39,7 +53,15 @@
 			</div>
 		</div>
 	</div>
-	<FinishedItems />
+	{#if isFinished}
+		<div>
+			<FinishedItems />
+		</div>
+	{:else}
+		<div>
+			<UpcomingItems />
+		</div>
+	{/if}
 </section>
 
 <style lang="scss">
@@ -55,7 +77,6 @@
 			border-bottom: $border-line;
 		}
 	}
-	
 
 	.left {
 		display: flex;
@@ -126,6 +147,43 @@
 				top: -2px;
 				transform: rotate(180deg);
 			}
+		}
+	}
+	.right {
+		display: none;
+	}
+
+	.top {
+		border-right: $border-line;
+	}
+
+	@media (max-width: 450px) {
+		.left {
+			width: 360px;
+
+			border-bottom: $border-line;
+
+			.title {
+				width: 180px;
+			}
+
+			.btn-box {
+				.btn-left {
+					max-width: 181px;
+					min-width: 181px;
+				}
+			}
+		}
+
+		.container {
+			.top {
+				border-right: none;
+				border-bottom: none;
+			}
+		}
+
+		.right {
+			display: none;
 		}
 	}
 </style>

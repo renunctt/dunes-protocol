@@ -8,7 +8,7 @@
 <div class="card">
 	<div class="top">
 		<img src={card.img} alt="bg" class="bg" />
-		<img src={card.icon} alt={card.title} />
+		<img class="icon" src={card.icon} alt={card.title} />
 	</div>
 
 	<h4 class="title">{card.title}</h4>
@@ -137,8 +137,15 @@
 	}
 
 	@media (max-width: 450px) {
+		.card {
+			width: 360px;
+		}
 		.top {
 			border-left: $border-line;
+
+			.icon {
+				width: 106px;
+			}
 		}
 	}
 </style>

@@ -1,13 +1,13 @@
 <script lang="ts">
 	import arrowIcon from '../assets/images/icons/arrow-green-featured.svg'
-	import EvermoonIcon from '../assets/images/logos/Evermoon.png'
 	import warningIcon from '../assets/images/icons/warning.svg'
+	import EvermoonIcon from '../assets/images/logos/Evermoon.png'
 	import homeCardImage from '../assets/images/video/home-card.png'
 
-	import twitterIcon from '../assets/images/icons/twitter.svg'
-	import wwwIcon from '../assets/images/icons/world-wide-web.svg'
 	import discordIcon from '../assets/images/icons/discord.svg'
 	import telegramIcon from '../assets/images/icons/telegram.svg'
+	import twitterIcon from '../assets/images/icons/twitter.svg'
+	import wwwIcon from '../assets/images/icons/world-wide-web.svg'
 </script>
 
 <section>
@@ -226,6 +226,77 @@
 			img {
 				min-width: 813px;
 				max-height: 476px;
+			}
+		}
+	}
+
+	@media (max-width: 450px) {
+		.card {
+			flex-direction: column;
+		}
+		.top {
+			width: 360px;
+			justify-content: start;
+		}
+		.title {
+			width: 288px;
+			border-right: $border-line;
+
+			span {
+				font-size: 30px;
+			}
+		}
+
+		.content {
+			width: 360px;
+			border: $border-line;
+		}
+
+		.content-top {
+			width: 360px;
+		}
+		.content-title {
+			padding-left: 18px;
+		}
+
+		.social {
+			padding-left: 18px;
+		}
+
+		.btn-box {
+			padding-left: 18px;
+		}
+
+		.info {
+			padding-left: 18px;
+		}
+
+		.description {
+			padding-left: 18px;
+		}
+
+		.bottom-box {
+			padding-left: 18px;
+			gap: 18px;
+		}
+
+		.card-right {
+			.card-top {
+				display: none;
+			}
+			.card-video {
+				height: 212px;
+				min-width: 360px;
+				max-width: 360px;
+				border: $border-line;
+				border-top: none;
+				left: 0;
+				img {
+				min-width: 360px;
+				max-width: 360px;
+
+					max-height: 260px;
+				}
 			}
 		}
 	}

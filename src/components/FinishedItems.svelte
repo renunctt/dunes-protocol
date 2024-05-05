@@ -58,11 +58,11 @@
 		<div class="top">
 			<div class="top-line first"><span></span></div>
 			<div class="top-line not"><span class="second"></span></div>
-			<div class="top-line"><span class="last"></span></div>
+			<div class="top-line last-item"><span class="last"></span></div>
 		</div>
 	</div>
 
-	<div class="container">
+	<div class="container cards">
 		{#each cards as card}
 			<CardItem {card} />
 		{/each}
@@ -112,22 +112,34 @@
 	}
 
 	@media (max-width: 450px) {
-		.container {
+		.cards {
+			display: flex;
 			flex-direction: column;
-			gap: 40px;
+			gap: 24px;
 		}
-		.second {
-			border: none;
-		}
-		.first span {
-			min-width: 194px;
-		}
-		.top-line {
-			max-width: 192px;
-		}
-		.not span {
-			background-color: initial;
-			border: none;
+		.top {
+			width: 360px;
+			.top-line {
+				span {
+					width: 180px;
+					border: none;
+				}
+
+				.last {
+					display: none;
+				}
+			}
+
+			.top-line.not {
+					span {
+						width: 179px;
+						border-right: $border-line;
+					}
+			}
+
+			.top-line.last-item {
+				display: none;
+			}
 		}
 	}
 </style>

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import arrowIcon from '../assets/images/icons/arrow-green.svg'
 	import bitcoinIcon from '../assets/images/icons/bitcoin.svg'
+	import circleImage from '../assets/images/icons/circle.png'
 	import logo1 from '../assets/images/logos/1.png'
 	import logo2 from '../assets/images/logos/2.png'
 	import logo3 from '../assets/images/logos/3.png'
@@ -25,6 +26,7 @@
 			}
 		}, 1000 / 60)
 	})
+
 </script>
 
 <section>
@@ -59,8 +61,10 @@
 		<div class="blur-right"></div>
 
 		<div class="right">
-			<img src={bitcoinIcon} alt="bitcoin" />
-			<div class="circle"></div>
+			<img class="bit" src={bitcoinIcon} alt="" />
+			<div class="circle">
+				<img src={circleImage} alt="" />
+			</div>
 		</div>
 	</div>
 </section>
@@ -133,7 +137,7 @@
 		margin-left: auto;
 		border-left: $border-line;
 
-		img {
+		.bit {
 			width: 47px;
 			position: relative;
 			left: 78px;
@@ -142,11 +146,13 @@
 
 	.circle {
 		@include flex-center;
-		width: 108px;
-		height: 108px;
-		background-image: url('../assets/images/icons/circle.png');
-		background-repeat: no-repeat;
-		animation: rotate 15s linear infinite;
+
+		img {
+			width: 108px;
+			height: 108px;
+			background-repeat: no-repeat;
+			animation: rotate 15s linear infinite;
+		}
 	}
 
 	@keyframes rotate {
@@ -160,29 +166,61 @@
 
 	@media (max-width: 450px) {
 		section {
-			.container {
-				flex-direction: column;
-			}
+
+		.container {
+			max-height: 88px;
+		}
 		}
 
 		.title {
+			position: relative;
+			top: -36px;
+			left: -10px;
 			text-align: center;
 			justify-content: center;
+
+			span {
+				font-size: 14px;
+			}
+		}
+
+		.run {
+			position: relative;
+			top: -30px;
 		}
 
 		.blur-left {
-			left: -20px;
+			top: -4px;
+			left: -30px;
 		}
 
 		.blur-right {
+			top: -4px;
 			width: 200px;
 			left: 320px;
 		}
 
 		.right {
+			position: relative;
+			top: -92px;
+			left: -318px;
 			border: none;
 			margin: 0;
 			padding-right: 60px;
+
+			.circle {
+				img {
+					width: 80px;
+				height: 80px;
+				}
+				
+			}
+
+			.bit {
+				width: 35px;
+				position: relative;
+				left: 59px;
+			}
 		}
 
 		.content {

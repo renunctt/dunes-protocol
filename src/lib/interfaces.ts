@@ -8,7 +8,11 @@ export interface ICard {
 		icon: string
 		link: string
 		alt: string
-	}[
-		
-	]
+	}[]
+}
+
+export interface ICardUpcoming {
+	title: string
+	img: string
+	icon: string
 }

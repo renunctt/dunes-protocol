@@ -7,6 +7,7 @@
 	import launchpadIcon from '../assets/images/nav/launchpad.png'
 	import stakingIcon from '../assets/images/nav/staking.svg'
 	import { Link } from 'svelte-routing'
+	import closeIcon from '../assets/images/icons/close.svg'
 
 	const incubationItems = [
 		{ text: 'Dune Swap', link: '/swap', icon: swapIcon },
@@ -19,6 +20,12 @@
 		{ text: 'INO Launchpad', link: '/ino-launchpad', icon: launchpadIcon },
 		{ text: 'Staking', link: '/staking', icon: stakingIcon },
 	]
+
+	let isActive = false
+
+	function toggleBurger() {
+		isActive = !isActive
+	}
 </script>
 
 <header class="header">
@@ -62,16 +69,90 @@
 			<button class="connect">Connect wallet</button>
 		</div>
 
-		<button class="burger">
+		<button on:click={toggleBurger} class="burger">
 			<span></span>
 			<span></span>
 			<span></span>
 		</button>
 	</div>
 </header>
+{#if isActive}
+	<div class="menu">
+		<button on:click={toggleBurger} class="menu-close">
+			<img src={closeIcon} alt="close" />
+		</button>
+		<div class="menu-item">Incubation</div>
+		<div class="menu-list">
+			{#each incubationItems as item}
+				<Link to={item.link}>
+					<div class="menu-link">
+						<img src={item.icon} alt="" />
+						{item.text}
+					</div>
+				</Link>
+			{/each}
+		</div>
+
+		<div class="menu-item">Protocol</div>
+		<div class="menu-list">
+			{#each protocolItems as item}
+				<Link to={item.link}>
+					<div class="menu-link">
+						<img src={item.icon} alt="" />
+						{item.text}
+					</div>
+				</Link>
+			{/each}
+		</div>
+	</div>
+{/if}
 
 <style lang="scss">
 	@import '../assets/styles/variables';
+
+	.menu {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+		background-color: $second-bg-color;
+		z-index: 1000;
+		align-items: start;
+		padding-top: 50px;
+	}
+
+	.menu-list {
+		margin-left: 100px;
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		gap: 10px;
+	}
+
+	.menu-link {
+		display: flex;
+		align-items: center;
+		justify-content: start;
+		gap: 10px;
+		font-size: 20px;
+		padding: 10px 0;
+	}
+
+	.menu-item {
+		margin-left: 100px;
+
+		font-size: 26px;
+		font-weight: 500;
+	}
+
+	.menu-close img {
+		position: absolute;
+		right: 20px;
+		top: 20px;
+		width: 40px;
+	}
 
 	.burger {
 		@include flex-center;
@@ -98,7 +179,6 @@
 		transform: translateX(-1px);
 
 		.link {
-
 			padding: 30px 0 30px 26px;
 			@include flex;
 			justify-content: start;
@@ -110,7 +190,6 @@
 	}
 
 	.link-item {
-
 		padding: 30px 0 30px 26px;
 		@include flex-center;
 		gap: 9px;
